@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %}
+
+<div class='all-bounties-container'>
+
+{% for bounty in bounties %}
+<a href="{{bounty.id}}">
+<div class="card bounties-card" style="width: 18rem;">
+  <img src="{{bounty.img_url}}" class="card-img-top" alt="...">
+  <div class="card-body bounties-card-body">
+    <h5 class="">{{bounty.name}}</h5>
+    <p class="">{{bounty.get_status_display}}</p>
+    <p class="">{{bounty.summary}}</p>
+  </div>
+</div>
+</a>
+{% endfor %}
+
+</div>
+
+{% endblock %}
